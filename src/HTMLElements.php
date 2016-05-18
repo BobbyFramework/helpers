@@ -7,7 +7,7 @@ class HTMLElements {
     public static function arrayToAttributes(array $attributes)
     {
         //Build a list of single attributes first
-        $attributeList = array();
+        $attributeList = [];
         foreach ($attributes as $key => $value) {
             // If the value is not false add the attribute. This allows attributes to not be shown.
             if ($value !== false) {
