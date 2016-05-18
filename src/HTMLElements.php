@@ -1,6 +1,6 @@
 <?php
 
-namespace BobbyFramework\Session;
+namespace BobbyFramework\Helpers;
 
 class HTMLElements {
 
