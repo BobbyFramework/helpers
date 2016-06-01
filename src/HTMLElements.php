@@ -20,4 +20,23 @@ class HTMLElements {
         }
         return implode(' ', $attributeList);
     }
+    
+    public static function a($attributes = '', $content = '')
+    {
+        $defaults = array('name' => ((!is_array($attributes)) ? $attributes : ''), 'href' => '#');
+        if (is_array($attributes) AND isset($attributes['content'])) {
+            $content = $attributes['content'];
+            unset($attributes['content']); // content is not an attribute
+        }
+        return "<a " . self::arrayToAttributes(array_merge($defaults, $attributes)) . ">" . $content . "</a>";
+    }
+
+    public static function span($attributes = '', $content = '')
+    {
+        if (is_array($attributes) AND isset($attributes['content'])) {
+            $content = $attributes['content'];
+            unset($attributes['content']); // content is not an attribute
+        }
+        return "<span " . self::arrayToAttributes($attributes) . ">" . $content . "</span>";
+    }
 }
