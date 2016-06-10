@@ -2,8 +2,17 @@
 
 namespace BobbyFramework\Helpers;
 
-class HTMLElements {
+/**
+ * Class HTMLElements
+ * @package BobbyFramework\Helpers
+ */
+class HTMLElements
+{
 
+    /**
+     * @param array $attributes
+     * @return string
+     */
     public static function arrayToAttributes(array $attributes)
     {
         //Build a list of single attributes first
@@ -20,7 +29,12 @@ class HTMLElements {
         }
         return implode(' ', $attributeList);
     }
-    
+
+    /**
+     * @param string $attributes
+     * @param string $content
+     * @return string
+     */
     public static function a($attributes = '', $content = '')
     {
         $defaults = array('name' => ((!is_array($attributes)) ? $attributes : ''), 'href' => '#');
@@ -31,6 +45,11 @@ class HTMLElements {
         return "<a " . self::arrayToAttributes(array_merge($defaults, $attributes)) . ">" . $content . "</a>";
     }
 
+    /**
+     * @param string $attributes
+     * @param string $content
+     * @return string
+     */
     public static function span($attributes = '', $content = '')
     {
         if (is_array($attributes) AND isset($attributes['content'])) {
